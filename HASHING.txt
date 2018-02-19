@@ -1,0 +1,86 @@
+
+========================================================================
+HASHING EXAMPLE
+========================================================================
+Very Smart example!!!
+========================================================================
+
+String = 'ababcd'
+
+Algorithm:
+1. Declare a frequency count array freq[length of string].
+ /*actually array of size length of string is for worst case when all characters are different*/
+
+2. Define a hashing function to map each character to a unique index.
+eg. 
+
+hashfunc(char c){
+return (c - 'a'); //mapping for char 'a' = 0, 'b' = 1, 'c' = 2,... and so on
+}
+
+3. for i -> 0 to length of string{
+
+index = hashfunc(String[i]);
+freq[index]++;
+
+}
+
+4. for i-> 0 to 26{
+
+cout<<"frequency of "<<char(i+'a')<<" is "<<freq[i];
+}
+
+==============================================================
+Explanation:
+
+Frequency of character 'a' will be at freq[0]
+Frequency of character 'b' will be at freq[1]
+Frequency of character 'c' will be at freq[2]
+.
+.
+.
+
+==============================================================
+
+i = 0
+index=0
+freq[0] = 1
+
+
+i=1
+index=1
+freq[1] = 1
+
+i=2
+index=0
+freq[0]=2
+
+i=3
+index=1
+freq[1]=2
+
+i=4
+index=2
+freq[2]=1
+
+i=5
+index=3
+freq[3]=1
+
+
+freq={2,2,1,1}	
+ 
+
+
+
+
+Hashing 
+----------
+_____________________
+char | index | value | 
+-----|-------|-------|
+     |       |       |
+     |       |       |
+     |       |       |
+     |       |       |
+--------------------- 
