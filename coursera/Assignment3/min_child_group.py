@@ -25,7 +25,7 @@ def quick_sort(arr,low,high):
         arr=quick_sort(arr,pi+1,high)
     return (arr)
 
-array = [24,3.8,4.9,5.8,9.7,17.8,17.9,18.0,22,22.2,3.2]      
+array = [24,3.8,14,4.9,5.8,55,9.7,17.8,22,17.9,18.0,22,22.2,3.2]      
 x = quick_sort(array,0,len(array)-1)
 print (x)  
     

@@ -3,6 +3,16 @@ import sys
 
 def optimal_summands(n):
     summands = []
+    k = 1
+    while True:
+        if(n<=2*k):
+            summands.append(n)
+            break
+        else:
+            summands.append(k)
+            n-=k
+            k+=1        
+    
     
     return summands
 
@@ -13,3 +23,9 @@ if __name__ == '__main__':
     print(len(summands))
     for x in summands:
         print(x, end=' ')
+
+	
+
+
+
+
