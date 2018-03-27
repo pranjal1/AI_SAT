@@ -38,7 +38,7 @@ def get_optimal_value(capacity, weights, values):
 	        capacity -= val_per_wt[i][1]
 	        value += val_per_wt[i][0]
 	    else:
-	    	value += (capacity/val_per_wt[i][1]) * val_per_wt[i][0]
+	    	value += capacity*val_per_wt[i][2]
 	    	capacity = 0
 	    i+=1 
 	    counter-=1
@@ -48,9 +48,13 @@ def get_optimal_value(capacity, weights, values):
 
 
 if __name__ == "__main__":
-    data = list(map(int, sys.stdin.read().split()))
-    n, capacity = data[0:2]
-    values = data[2:(2 * n + 2):2]
-    weights = data[3:(2 * n + 2):2]
-    opt_value = get_optimal_value(capacity, weights, values)
-    print("{:.10f}".format(opt_value))
+	data = list(map(int, sys.stdin.read().split()))
+	n, capacity = data[0:2]
+	values = data[2:(2 * n + 2):2]
+	weights = data[3:(2 * n + 2):2]
+
+	opt_value = get_optimal_value(capacity, weights, values)
+	print("{:.10f}".format(opt_value))
+
+    	    		
+	
