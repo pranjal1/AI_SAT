@@ -25,4 +25,4 @@ if __name__ == '__main__':
     #use fast_count_segments
     cnt = naive_count_segments(starts, ends, points)
     for x in cnt:
-        print(x, end=' ')
+print(x, end=' ')

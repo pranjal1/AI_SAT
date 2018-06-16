@@ -28,10 +28,11 @@ def quick_sort(arr,low,high):
 
 def get_optimal_value(capacity, weights, values):
     value = 0.
-    i = 0
-    val_per_wt = [(x,y,x/y) for x, y in zip(values, weights)]
+    i = 0	
+    val_per_wt = [(x,y,float(x)/y) for x, y in zip(values, weights)]
     val_per_wt = quick_sort(val_per_wt,0,len(val_per_wt)-1)
     counter = len(val_per_wt)
+    #print(val_per_wt)  	
     while(counter>0):
 
 	    if (val_per_wt[i][1] <= capacity):
@@ -42,7 +43,6 @@ def get_optimal_value(capacity, weights, values):
 	    	capacity = 0
 	    i+=1 
 	    counter-=1
-#	    print (i,counter)
 
     return value
 
@@ -54,7 +54,7 @@ if __name__ == "__main__":
 	weights = data[3:(2 * n + 2):2]
 
 	opt_value = get_optimal_value(capacity, weights, values)
-	print("{:.10f}".format(opt_value))
+	print("{:.4f}".format(opt_value))
 
     	    		
 	

@@ -6,7 +6,7 @@ def partition_sorter(arr,low,high):
     pivot = arr[high]
     index = low-1    
     for counter in range(low,high+1):
-        if (arr[counter]>=pivot):
+        if (arr[counter]>=pivot): #for descending order
             index+=1
             arr[counter],arr[index] = arr[index],arr[counter]
             
@@ -33,7 +33,10 @@ def max_dot_product(a, b):
     b = quick_sort(b,0,len(b)-1)
     res = 0
     for i in range(len(a)):
-        res += a[i] * b[i]
+        try:
+            res += a[i] * b[i]
+        except:
+            print(a,b,i)
     return res
 
 if __name__ == '__main__':
